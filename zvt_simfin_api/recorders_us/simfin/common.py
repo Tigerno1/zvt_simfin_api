@@ -10,7 +10,6 @@ from zvt.contract.api import get_data
 from zvt.domain_us.stock_meta_us import Stock 
 from zvt.contract.recorder import Recorder, RecorderForEntities
 from zvt.contract.api import get_data
-from zvt.settings import ZVT_ZIP_PATH
 from zvt.contract.api import df_to_db
 
 
@@ -42,7 +41,7 @@ class SimFinEntityRecorder(RecorderForEntities):
 class BaseSimFinFinanceRecorder(Recorder):
 
     refresh_days = 3
-    sf.set_data_dir(ZVT_ZIP_PATH)
+    sf.set_data_dir('~/simfin_data/')
     sf.set_api_key(api_key='') # api key for simfin
 
     def get_data_from_simfin(self): 
